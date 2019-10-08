@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 /* const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin') */
 const path = require('path')
 const { noParse, stats, alias } = require('./config.js')
@@ -79,7 +80,8 @@ const webpackConfig = {
       template: path.resolve(__dirname, '../demo/index.html'),
       filename: 'index.html',
       inject: true
-    })
+    }),
+    new VueLoaderPlugin()
     /* new ForkTsCheckerWebpackPlugin({ checkSyntacticErrors: true }) */
   ],
   node: {

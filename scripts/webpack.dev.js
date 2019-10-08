@@ -12,7 +12,7 @@ const { createNotifierCallback } = require('./util.lib.js')
 
 const webpackConfig = {
   entry: {
-    demo: path.resolve(__dirname, '../src/index.ts')
+    demo: path.resolve(__dirname, '../demo/index.ts')
   },
   devServer: {
     host: '0.0.0.0',
@@ -23,7 +23,7 @@ const webpackConfig = {
       errors: true
     },
     contentBase: devConfig.assetsRoot,
-    quiet: false,
+    quiet: true,
     hotOnly: true
   },
   plugins: [
