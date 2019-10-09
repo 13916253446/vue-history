@@ -3,6 +3,7 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin')
 /* const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin') */
 const path = require('path')
 const { noParse, stats, alias } = require('./config.js')
+const cssLoaders = require('./util.cssLoader.js')
 
 const babelLoader = {
   loader: 'babel-loader',
@@ -71,7 +72,8 @@ const webpackConfig = {
             image: 'xlink:href'
           }
         }
-      }
+      },
+      ...cssLoaders()
     ]
   },
   plugins: [
